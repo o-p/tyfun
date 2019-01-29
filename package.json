@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/o-p/tyfun/issues"
   },
-  "homepage": "https://github.com/o-p/tyfun#readme"
+  "homepage": "https://github.com/o-p/tyfun#readme",
+  "devDependencies": {
+    "jest": "^24.0.0",
+    "typescript": "^3.2.4"
+  }
 }
