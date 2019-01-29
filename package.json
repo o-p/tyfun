@@ -1,0 +1,23 @@
+{
+  "name": "tyfun",
+  "version": "0.0.1",
+  "description": "Typescript + Functional",
+  "main": "dist/tyfun.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o-p/tyfun.git"
+  },
+  "keywords": [
+    "Typescript",
+    "Functional"
+  ],
+  "author": "Chris Chu <chrischu@kkbox.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/o-p/tyfun/issues"
+  },
+  "homepage": "https://github.com/o-p/tyfun#readme"
+}
