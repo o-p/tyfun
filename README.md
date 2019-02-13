@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/o-p/tyfun.svg?style=svg)](https://circleci.com/gh/o-p/tyfun)
+[![CircleCI](https://circleci.com/gh/o-p/tyfun/tree/master.svg?style=svg)](https://circleci.com/gh/o-p/tyfun/tree/master)
 
 # TYFUN
 
