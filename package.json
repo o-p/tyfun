@@ -1,6 +1,6 @@
 {
   "name": "tyfun",
-  "version": "0.0.2",
+  "version": "alpha",
   "description": "Typescript + Functional",
   "main": "dist/tyfun.js",
   "scripts": {
