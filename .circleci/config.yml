@@ -71,10 +71,10 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/tyfun/build
+          at: ~/tyfun
       - run:
           name: Authenticate with registry
-          command: echo "//packagecloud.io/tyfun/npm/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tyfun/build/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_PUBLISH_TOKEN" > ~/.npmrc
       - run:
           name: Publish package
           command: npm publish
