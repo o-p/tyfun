@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "parser": "typescript-eslint-parser",
+  "plugins": [
+      "typescript"
+  ],
+  "rules": {
+    "comma-dangle": ["error", {
+      "arrays": "always-multiline",
+      "objects": "always-multiline",
+      "imports": "always-multiline",
+      "exports": "always-multiline",
+      "functions": "never"
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "root": true
+}

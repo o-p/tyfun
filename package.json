@@ -1,10 +1,12 @@
 {
   "name": "tyfun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript + Functional",
   "main": "dist/tyfun.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --ext .ts src/ tests/",
+    "test": "jest tests/",
+    "transpile": "tsc"
   },
   "repository": {
     "type": "git",
@@ -16,8 +18,27 @@
   ],
   "author": "Chris Chu <chrischu@kkbox.com>",
   "license": "MIT",
+  "files": [
+    "dist/*.js",
+    "js/*"
+  ],
   "bugs": {
     "url": "https://github.com/o-p/tyfun/issues"
   },
-  "homepage": "https://github.com/o-p/tyfun#readme"
+  "homepage": "https://github.com/o-p/tyfun#readme",
+  "devDependencies": {
+    "@types/jest": "^23.3.13",
+    "eslint": "^5.12.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^22.2.1",
+    "eslint-plugin-typescript": "^0.14.0",
+    "jest": ">=22.0.0 <24.0.0",
+    "jest-junit": "^6.2.1",
+    "rollup": "^1.1.2",
+    "ts-jest": "^23.10.5",
+    "typescript": "~3.2.1",
+    "typescript-eslint-parser": "^22.0.0"
+  }
 }

@@ -1,0 +1,117 @@
+version: 2
+
+defaults: &defaults
+  docker:
+      - image: circleci/node:8.10.0
+  working_directory: ~/tyfun
+
+jobs:
+  install:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+      - run: yarn install
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-{{ checksum "package.json" }}
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Lint Typescript files
+          command: yarn lint -f junit -o reports/eslint/report.xml
+      - store_test_results:
+          path: reports
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Unit Tests
+          command: yarn test --coverage --ci --runInBand --reporters=default --reporters=jest-junit
+          environment:
+            JEST_JUNIT_OUTPUT: "reports/jest/report.xml"
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports/jest
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Transpile Typescript files
+          command: yarn tsc
+      - run:
+          name: Copy source files
+          command: cp src/*.ts build/
+      - run:
+          name: Prepare package.json
+          command: jq -M ".version = \"$CIRCLE_TAG\" | del(.devDependencies, .scripts)" package.json > build/package.json
+      - store_artifacts:
+          path: build/
+      - persist_to_workspace:
+          root: ~/tyfun/build
+          paths: .
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/tyfun/build
+      - run:
+          name: Authenticate with registry
+          command: echo "//packagecloud.io/tyfun/npm/:_authToken=$NPM_PUBLISH_TOKEN" > ~/tyfun/build/.npmrc
+      - run:
+          name: Publish package
+          command: npm publish
+
+workflows:
+  version: 2
+  test-build-deploy:
+    jobs:
+      - install:
+          filters:
+            tags:
+              only: /.*/
+      - lint:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+      - test:
+          requires:
+            - install
+          filters:
+            tags:
+              only: /.*/
+      - build:
+          requires:
+            - install
+            - lint
+            - test
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /v[0-9]+(\.[0-9]+)*(-[a-z]+)?$/
+            branches:
+              ignore: /.*/

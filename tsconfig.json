@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+      "baseUrl": "src",
+      "outDir": "build/js",
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "ES2015",
+      "jsx": "react"
+  },
+  "include": [
+      "./src/**/*"
+  ],
+  "lib": [
+    "ES2015",
+    "ES2016",
+    "ES2017"
+  ]
+}
