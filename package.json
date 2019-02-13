@@ -19,6 +19,7 @@
   "author": "Chris Chu <chrischu@kkbox.com>",
   "license": "MIT",
   "files": [
+    "*.ts",
     "dist/*.js",
     "js/*"
   ],
