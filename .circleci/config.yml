@@ -61,7 +61,7 @@ jobs:
           command: cp src/*.ts build/
       - run:
           name: Prepare publish package
-          command: npm version $CIRCLE_TAG && cp package.json build/ && cp README.md build/
+          command: jq -M ".version = \"$CIRCLE_TAG\" | del(.devDependencies, .scripts)" package.json > build/package.json && cp README.md build/
       - store_artifacts:
           path: build/
       - persist_to_workspace:
