@@ -2,7 +2,7 @@
   "name": "tyfun",
   "version": "alpha",
   "description": "Typescript + Functional",
-  "main": "dist/tyfun.js",
+  "main": "js/index.js",
   "scripts": {
     "lint": "eslint --ext .js,.ts src/ tests/",
     "test": "jest",
@@ -21,8 +21,8 @@
   "license": "MIT",
   "files": [
     "*.ts",
-    "dist/*.js",
-    "js/*"
+    "js/*",
+    "types/*.d.ts"
   ],
   "bugs": {
     "url": "https://github.com/o-p/tyfun/issues"
