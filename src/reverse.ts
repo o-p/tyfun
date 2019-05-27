@@ -1,3 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type ReversableArray = any[];
+type ReversableString = string;
+type Reversable = ReversableArray | ReversableString;
+
+/** @sig [a] -> [a] */
+function reverse(origin: ReversableArray): ReversableArray;
+/** @sig String -> String */
+function reverse(origin: ReversableString): ReversableString;
+
 /**
  * @sig [a] -> [a]
  * @sig String -> String
@@ -5,8 +15,10 @@
  * @param {Array|String} list
  * @return {Array|String}
  */
-export default function reverse(list: any[] | string): string | any[] {
-  return typeof list === 'string'
-    ? list.split('').reverse().join('')
-    : list.reverse();
+function reverse(origin: Reversable): Reversable {
+  return typeof origin === 'string'
+    ? origin.split('').reverse().join('')
+    : origin.reverse();
 }
+
+export default reverse;

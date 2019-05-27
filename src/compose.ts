@@ -8,5 +8,6 @@ import reverse from './reverse';
  * @return {Function}
  */
 export default function compose(...funcs: Function[]): Function {
-  return pipe(...reverse(funcs));
+  const [head, ...rest] = reverse(funcs);
+  return pipe(head, ...rest);
 }
