@@ -4,9 +4,10 @@
   "description": "Typescript + Functional",
   "main": "dist/tyfun.js",
   "scripts": {
-    "lint": "eslint --ext .ts src/ tests/",
-    "test": "jest tests/",
-    "transpile": "tsc"
+    "lint": "eslint --ext .js,.ts src/ tests/",
+    "test": "jest",
+    "transpile": "tsc",
+    "valid": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -29,17 +30,20 @@
   "homepage": "https://github.com/o-p/tyfun#readme",
   "devDependencies": {
     "@types/jest": "^23.3.13",
-    "eslint": "^5.12.1",
+    "@types/node": "^12.0.2",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-import-resolver-typescript": "^1.1.1",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jest": "^22.2.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-jest": "^22.6.4",
     "eslint-plugin-typescript": "^0.14.0",
-    "jest": ">=22.0.0 <24.0.0",
+    "jest": "^24.8.0",
     "jest-junit": "^6.2.1",
     "rollup": "^1.1.2",
-    "ts-jest": "^23.10.5",
-    "typescript": "~3.2.1",
+    "ts-jest": "^24.0.2",
+    "typescript": "^3.4.5",
     "typescript-eslint-parser": "^22.0.0"
   }
 }

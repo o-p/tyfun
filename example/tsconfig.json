@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "baseUrl": ".",
+      "outDir": "build/tsc/",
+      "sourceMap": false,
+      "noImplicitAny": true,
+      "module": "commonjs",
+      "target": "ES2015",
+      "jsx": "react",
+      "paths": {
+        "tyfun/*": ["../src/*"]
+      }
+  },
+  "include": [
+      "./aws-lambda-handler/**/*.ts"
+  ],
+  "exclude": [],
+  "lib": [
+    "ES2015",
+    "ES2016",
+    "ES2017"
+  ]
+}

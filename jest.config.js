@@ -1,6 +1,6 @@
 module.exports = {
   roots: [
-    '<rootDir>',
+    '<rootDir>/tests/',
   ],
   preset: 'ts-jest',
   collectCoverageFrom: [
@@ -11,13 +11,14 @@ module.exports = {
     '<rootDir>/node_modules/',
   ],
   coverageReporters: [
+    'text',
     'text-summary',
     'html',
   ],
-  // globals: {
-  //   'ts-jest': {
-  //     diagnostics: false,
-  //   },
-  // },
+  globals: {
+    'ts-jest': {
+      diagnostics: false,
+    },
+  },
   testMatch: ['<rootDir>/tests/**/*.test.{ts,js}'],
 };
