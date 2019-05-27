@@ -2,6 +2,18 @@
 
 # TYFUN
 
+> ### Require a slogan here...
+>
+> Goals:
+>
+> 1. TypeScript base, for TypeScript project directly usage.
+>
+> 1. Also available for plain JavaScript environment.
+>
+> 1. No dependencies.
+
+## Usage
+
 1. Import single function (TypeScript):
 
   ```ts

@@ -23,7 +23,8 @@
   "files": [
     "*.ts",
     "js/*",
-    "types/*.d.ts"
+    "types/*.d.ts",
+    "README.md"
   ],
   "bugs": {
     "url": "https://github.com/o-p/tyfun/issues"
