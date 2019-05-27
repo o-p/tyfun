@@ -2,32 +2,41 @@
 
 # TYFUN
 
-1. 獨立使用
+1. Import single function (TypeScript):
 
   ```ts
-  import compose from 'tyfun/compose'
+  import compose from 'tyfun/compose' // tyfun/compose.ts
 
-  compose(
-    Math.abs,
-    Math.min
-  )
+  compose(Math.abs, Math.min)(300, 100, -50) // 50
   ```
 
-1. 整批匯入 (是否有辦法達成? package main 在 ts 使用 a.index.ts; js 使用 b.index.js )
+2. Import all functions (TypeScript):
 
   ```ts
-  import { curry, pipe } from 'tyfun'
+  import { compose, reverse } from 'tyfun/tyfun' // tyfun/tyfun.ts
 
-  pipe(
-    curry(Math.min, ...presets),
-    curry(Math.log, 5)
-  )
+  compose(reverse, Array.of)([1, 2, 3]) // [3, 2, 1]
   ```
 
-## Build
+3. Import single function (JavaScript):
 
-1. copy package.json (for publish) ............ 移除相依套件
-1. copy src/*.ts -> build/ .................... 複製 .ts
-1. 產出 build/tyfun.ts, export all modules ..... 打包 .ts (低優先)
-1. tsc src/*.ts -> build/js ................... 轉譯 .js (非必要)
-1. pack build/js/*.js -> build/dist/tyfun.js .. 打包 .js (非必要)
+  ```js
+  import has from 'tyfun/js/has' // tyfun/js/has.js
+
+  has('length')([]) // true
+  ```
+
+4. Import all functions (JavaScript)
+
+  ```js
+  import { compose, has, reverse } from 'tyfun' // tyfun/js/tyfun.js
+
+  const result = compose(reverse, String, has('length'))
+  result('') // 'eurt'
+  result(Symbol('')) // 'eslaf'
+  ```
+
+## TODO
+
+- [ ] Transpile and bundle js/*.js for compatibility
+- [ ] Document

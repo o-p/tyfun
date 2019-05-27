@@ -2,7 +2,8 @@
   "name": "tyfun",
   "version": "alpha",
   "description": "Typescript + Functional",
-  "main": "js/index.js",
+  "main": "js/tyfun.js",
+  "types": "types/tyfun.d.ts",
   "scripts": {
     "lint": "eslint --ext .js,.ts src/ tests/",
     "test": "jest",
