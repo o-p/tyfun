@@ -48,6 +48,32 @@
   result(Symbol('')) // 'eslaf'
   ```
 
+## Try it Out
+
+Instead of installing the package and bootstrap an environment for only testing, you can directly clone the repository and try the functions in the example folder.
+
+```bash
+$ git clone https://github.com/o-p/tyfun.git test-tyfun
+
+# Go to the folder where env files are already prepared
+$ cd test-tyfun/example
+
+# Install Packages
+$ yarn
+```
+
+Then choose a topic folder you like to try and edit.
+
+After editing, choose a tool to transpile the sources:
+
+```bash
+## For your application case, if prefer Webpack:
+$ yarn webpack && cd build/webpack
+
+## Or prefer to transpile by tsc(typescript) directly:
+$ yarn tsc && cd build/tsc
+```
+
 ## TODO
 
 - [ ] Transpile and bundle js/*.js for compatibility
