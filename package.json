@@ -2,8 +2,8 @@
   "name": "tyfun",
   "version": "alpha",
   "description": "Typescript + Functional",
-  "main": "js/tyfun.js",
-  "types": "types/tyfun.d.ts",
+  "main": "index.ts",
+  "types": "types/index.d.ts",
   "scripts": {
     "lint": "eslint --ext .js,.ts src/ tests/",
     "mock": "cp -r src/ build/ && tsc && cp package.json build/",
@@ -24,8 +24,7 @@
   "files": [
     "*.ts",
     "js/*",
-    "types/*.d.ts",
-    "README.md"
+    "types/*.d.ts"
   ],
   "bugs": {
     "url": "https://github.com/o-p/tyfun/issues"
