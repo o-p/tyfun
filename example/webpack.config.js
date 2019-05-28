@@ -18,9 +18,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js'],
-    alias: {
-      tyfun: path.resolve(__dirname, '../src'),
-    },
   },
   devtool: 'inline-source-map',
   externals: {
