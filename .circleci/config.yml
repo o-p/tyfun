@@ -54,14 +54,14 @@ jobs:
           keys:
             - dependencies-{{ checksum "package.json" }}
       - run:
+          name: Copy TypeScript files
+          command: cp -r src/ build/
+      - run:
           name: Transpile Typescript files
           command: yarn tsc
       - run:
-          name: Copy source files
-          command: cp src/*.ts build/
-      - run:
-          name: Prepare publish package
-          command: jq -M ".version = \"$CIRCLE_TAG\" | del(.devDependencies, .scripts)" package.json > build/package.json && cp README.md build/
+          name: Prepare package files
+          command: cp README.md build/ && jq -M ".version = \"$CIRCLE_TAG\" | del(.devDependencies, .scripts)" package.json > build/package.json
       - store_artifacts:
           path: build/
       - persist_to_workspace:

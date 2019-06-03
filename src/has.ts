@@ -1,4 +1,6 @@
-type Objectable = object | any[] | string | number | boolean | symbol | Function;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type AnyArray = any[];
+type Objectable = object | string | number | boolean | symbol | Function | AnyArray;
 
 type HasProperty<T extends Objectable> = (target: T) => boolean;
 

@@ -6,10 +6,7 @@
       "noImplicitAny": true,
       "module": "commonjs",
       "target": "ES2015",
-      "jsx": "react",
-      "paths": {
-        "tyfun/*": ["../src/*"]
-      }
+      "jsx": "react"
   },
   "include": [
       "./aws-lambda-handler/**/*.ts"

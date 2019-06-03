@@ -1,7 +1,7 @@
 import has from '../src/has';
 
-describe('TyFun - has', () => {
-  test('Object', () => {
+describe('TyFun - has', (): void => {
+  test('Object', (): void => {
     const world = {
       wondful: null,
     };
@@ -11,7 +11,7 @@ describe('TyFun - has', () => {
   });
 
 
-  test('Non Object', () => {
+  test('Non Object', (): void => {
     const hasLength = has('length');
 
     expect(hasLength(['Array'])).toBeTruthy();

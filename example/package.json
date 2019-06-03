@@ -10,6 +10,9 @@
     "compile": "tsc",
     "valid": "tsc --noEmit"
   },
+  "dependencies": {
+    "tyfun": "file:../build"
+  },
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/preset-env": "^7.4.3",

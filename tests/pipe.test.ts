@@ -1,6 +1,6 @@
 import pipe from '../src/pipe';
 
-test('PIPE', () => {
+test('PIPE', (): void => {
   const formula = pipe(Math.max, Math.abs, Math.sqrt);
   expect(formula(-5566, -100, -999, -99999)).toBe(10);
 });
