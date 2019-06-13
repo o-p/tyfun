@@ -1,4 +1,5 @@
-import placeholder from './placeholder';
+// @ts-ignore
+import placeholder from './placeholder.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ToTestItem = any;

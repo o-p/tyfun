@@ -11,6 +11,8 @@ describe('TyFun - index', (): void => {
       'reverse',
     ];
 
-    PUBLIC_FUNCTIONS.map(lib => expect(typeof TyFun[lib]).toBe('function'));
+    PUBLIC_FUNCTIONS.forEach((name): void => {
+      expect(typeof TyFun[name]).toBe('function');
+    });
   });
 });

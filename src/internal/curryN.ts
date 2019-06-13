@@ -1,5 +1,7 @@
-import isPlaceholder from './isPlaceholder';
-import { Curry, Placeholder } from './internal';
+// @ts-ignore
+import isPlaceholder from './isPlaceholder.ts';
+// @ts-ignore
+import { Curry, Placeholder } from './internal.d.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type CarriedArgument = Placeholder | any;
@@ -26,7 +28,7 @@ export default function curryN(
     if (combined.length >= length
       && combined.slice(0, length).filter(isPlaceholder).length === 0
     ) {
-      return fn.call(this, combined);
+      return fn(...combined);
     }
     return curryN(length, combined, fn);
   };

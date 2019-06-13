@@ -1,5 +1,7 @@
-import pipe from './pipe';
-import reverse from './reverse';
+// @ts-ignore
+import pipe from './pipe.ts';
+// @ts-ignore
+import reverse from './reverse.ts';
 
 /**
  * @sig ((y -> z), (x -> y), ..., (p -> q), (a, b, ..., n) -> o)) -> ((a, b, ..., n) -> z)

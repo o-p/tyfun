@@ -54,8 +54,6 @@
 
 6. Use it on [Deno](https://deno.land/manual.html)
 
-    Only parts of functions are available on Deno for now, Deno runtime requires import path with extension filename.
-    
     ```typescript
     // demo.ts
     import has from './node_modules/tyfun/has.ts'
@@ -68,7 +66,7 @@
         hasName([])
     )
     ```
-    
+
     ```bash
     $ deno demo.ts
     [1/1] Compiling file:///.../demo.ts
