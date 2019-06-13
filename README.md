@@ -52,6 +52,29 @@
 
     The bundle file for browser usage is under `<tyfun>/dist/tyfun.js`, load it and it generate a global `TyFun` contains TyFun functions.
 
+6. Use it on [Deno](https://deno.land/manual.html)
+
+    Only parts of functions are available on Deno for now, Deno runtime requires import path with extension filename.
+    
+    ```typescript
+    // demo.ts
+    import has from './node_modules/tyfun/has.ts'
+
+    const hasName = has('name')
+
+    console.log(
+        hasName(function hello() {}),
+        hasName({ name: 'types'} ),
+        hasName([])
+    )
+    ```
+    
+    ```bash
+    $ deno demo.ts
+    [1/1] Compiling file:///.../demo.ts
+    true true false
+    ```
+
 ## Try it Out
 
 Instead of installing the package and bootstrap an environment for only testing, you can directly clone the repository and try the functions in the example folder.
