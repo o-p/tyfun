@@ -11,7 +11,7 @@
     "valid": "tsc --noEmit"
   },
   "dependencies": {
-    "tyfun": "file:../build"
+    "tyfun": "file:../src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

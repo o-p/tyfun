@@ -13,7 +13,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.ts$/, loader: ['babel-loader', 'ts-loader'] },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        options: { allowTsInNodeModules: true }
+      },
     ],
   },
   resolve: {

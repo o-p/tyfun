@@ -9,7 +9,8 @@
       "jsx": "react"
   },
   "include": [
-      "./aws-lambda-handler/**/*.ts"
+      "./aws-lambda-handler/**/*.ts",
+      "node_modules/tyfun/**/*.ts"
   ],
   "exclude": [],
   "lib": [
