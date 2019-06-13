@@ -5,11 +5,11 @@
   "main": "index.ts",
   "types": "types/index.d.ts",
   "scripts": {
-    "build": "yarn transpile && yarn bundle",
+    "before-commit": "yarn valid && yarn lint && yarn test",
+    "build": "yarn transpile && yarn bundle && yarn copy",
     "bundle": "rollup -c rollup.config.js",
+    "copy": "cp -r src/ build/",
     "lint": "eslint --ext .js,.ts src/ tests/",
-    "mock": "cp -r src/ build/ && tsc && cp package.json build/",
-    "start": "yarn valid && yarn lint && yarn test",
     "test": "jest",
     "transpile": "tsc",
     "valid": "tsc --noEmit"

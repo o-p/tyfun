@@ -54,10 +54,7 @@ jobs:
           keys:
             - dependencies-{{ checksum "package.json" }}
       - run:
-          name: Copy TypeScript files
-          command: cp -r src/ build/
-      - run:
-          name: Transpile Typescript files
+          name: Build Package
           command: yarn build
       - run:
           name: Prepare package files

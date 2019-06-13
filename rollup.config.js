@@ -4,7 +4,7 @@ const version = process.env.CIRCLE_TAG || require('./package.json').version;
 
 const banner = `
 /*!
- * TyFun v${version}
+ * TyFun ${version}
  * (c) 2019-${ new Date().getFullYear() } Chris Chu
  * Released under the MIT License.
  */
