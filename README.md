@@ -40,17 +40,17 @@
 
 4. Import all functions (JavaScript)
 
-  ```js
-  import { compose, has, reverse } from 'tyfun/js' // tyfun/js/index.js
+    ```js
+    import { compose, has, reverse } from 'tyfun/js' // tyfun/js/index.js
 
-  const result = compose(reverse, String, has('length'))
-  result('') // 'eurt'
-  result(Symbol('')) // 'eslaf'
-  ```
+    const result = compose(reverse, String, has('length'))
+    result('') // 'eurt'
+    result(Symbol('')) // 'eslaf'
+    ```
 
 5. Use it in browser
 
-  The bundle file for browser usage is under `<tyfun>/dist/tyfun.js`, load it and it generate a global `TyFun` contains TyFun functions.
+    The bundle file for browser usage is under `<tyfun>/dist/tyfun.js`, load it and it generate a global `TyFun` contains TyFun functions.
 
 ## Try it Out
 
