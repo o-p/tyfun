@@ -27,6 +27,7 @@
   "files": [
     "*.ts",
     "dist/*",
+    "internal/*",
     "js/*",
     "types/*.d.ts"
   ],
