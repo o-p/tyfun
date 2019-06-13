@@ -48,6 +48,10 @@
   result(Symbol('')) // 'eslaf'
   ```
 
+5. Use it in browser
+
+  The bundle file for browser usage is under `<tyfun>/dist/tyfun.js`, load it and it generate a global `TyFun` contains TyFun functions.
+
 ## Try it Out
 
 Instead of installing the package and bootstrap an environment for only testing, you can directly clone the repository and try the functions in the example folder.
@@ -76,5 +80,4 @@ $ yarn tsc && cd build/tsc
 
 ## TODO
 
-- [ ] Transpile and bundle js/*.js for compatibility
 - [ ] Document
