@@ -5,8 +5,11 @@
   "main": "index.ts",
   "types": "types/index.d.ts",
   "scripts": {
+    "build": "yarn transpile && yarn bundle",
+    "bundle": "rollup -c rollup.config.js",
     "lint": "eslint --ext .js,.ts src/ tests/",
     "mock": "cp -r src/ build/ && tsc && cp package.json build/",
+    "start": "yarn valid && yarn lint && yarn test",
     "test": "jest",
     "transpile": "tsc",
     "valid": "tsc --noEmit"
@@ -23,6 +26,7 @@
   "license": "MIT",
   "files": [
     "*.ts",
+    "dist/*",
     "js/*",
     "types/*.d.ts"
   ],
@@ -43,7 +47,8 @@
     "eslint-plugin-typescript": "^0.14.0",
     "jest": "^24.8.0",
     "jest-junit": "^6.2.1",
-    "rollup": "^1.1.2",
+    "rollup": "^1.15.1",
+    "rollup-plugin-typescript": "^1.0.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.4.5",
     "typescript-eslint-parser": "^22.0.0"
