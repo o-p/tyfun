@@ -1,5 +1,7 @@
-import isPlaceholder from './isPlaceholder';
-import { Curry, Placeholder } from './internal';
+// @ts-ignore
+import isPlaceholder from './isPlaceholder.ts';
+// @ts-ignore
+import { Curry, Placeholder } from './internal.d.ts';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type CarriedArgument = Placeholder | any;

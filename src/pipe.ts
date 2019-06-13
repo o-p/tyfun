@@ -1,4 +1,5 @@
-import { Pipe } from './internal/internal';
+// @ts-ignore
+import { Pipe } from './internal/internal.d.ts';
 
 /**
  * @sig (((a, b, ..., n) -> o), (o -> p), (p -> q)..., (x -> y), (y -> z)) -> ((a, b, ..., n) -> z))

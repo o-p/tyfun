@@ -1,4 +1,5 @@
-import { Placeholder } from './internal';
+// @ts-ignore
+import { Placeholder } from './internal.d.ts';
 
 function placeholder(): void {}
 
