@@ -28,7 +28,7 @@ export default function curryN(
     if (combined.length >= length
       && combined.slice(0, length).filter(isPlaceholder).length === 0
     ) {
-      return fn.call(this, combined);
+      return fn(...combined);
     }
     return curryN(length, combined, fn);
   };

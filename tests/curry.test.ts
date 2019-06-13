@@ -16,8 +16,8 @@ describe('TyFun - curry', (): void => {
   });
 
   test('Basic Usage - Length N', (): void => {
-    const logDefault = curry(Array.from);
-    const logExactlyThree = curry(Array.from, 3);
+    const logDefault = curry(Array.of);
+    const logExactlyThree = curry(Array.of, 3);
     // const abs = curry(Math.abs);
     expect(logDefault).toBeInstanceOf(Function);
     expect(logExactlyThree).toBeInstanceOf(Function);
