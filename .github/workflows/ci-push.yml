@@ -11,11 +11,12 @@ jobs:
       image: node:10
       env:
         NODE_ENV: development
-      options: "--entrypoint /bin/sh"
     steps:
-      - name: "List all files"
+      - name: List all files
+        run: ls -al
+        shell: bash
         # uses: docker://node:8
-        run: "pwd && ls -al"
+        # run: "pwd && ls -al"
         # with:
         #   entrypoint: /bin/sh
       # - name: "Install dependencies"
