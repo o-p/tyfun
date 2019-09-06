@@ -15,7 +15,10 @@ jobs:
     # runs-on: ubuntu-18.04
     steps:
       - name: "List all files"
-        run: ls -al
+        uses: docker://node:8
+        with:
+          entrypoint: /bin/sh
+        run: pwd && ls -al
       - name: "Install dependencies"
         run: yarn
         # uses: docker://node:8
