@@ -6,33 +6,36 @@ on: [push]
 jobs:
   install:
     name: "Install Requied Packages"
-    strategy:
-      matrix:
-        node: ["8", "10", "latest"]
-    runs-on: ubuntu-18.04
+    container:
+      image: node:10
+      env:
+        NODE_ENV: development
+      # options:
+    # runs-on: ubuntu-18.04
     steps:
+      - ls -al
       - name: Check env
-        uses: docker://node:${{ matrix.node }}
+        # uses: docker://node:8
         with:
           entrypoint: /bin/sh
-        env:
-          NODE_ENV: "production"
+        # env:
+        #   NODE_ENV: "production"
         run: yarn
-  lint:
-    name: "Lint Typescripts"
-    needs: [install]
-    runs-on: ubuntu-18.04
-    steps:
-      - yarn lint
-  build:
-    name: "Transpile to JavaScript"
-    needs: [install]
-    runs-on: ubuntu-18.04
-    steps:
-      - yarn build
-  test:
-    name: "Run Unit Tests"
-    needs: [install]
-    runs-on: ubuntu-18.04
-    steps:
-      - yarn test
+  # lint:
+  #   name: "Lint Typescripts"
+  #   needs: [install]
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - yarn lint
+  # build:
+  #   name: "Transpile to JavaScript"
+  #   needs: [install]
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - yarn build
+  # test:
+  #   name: "Run Unit Tests"
+  #   needs: [install]
+  #   runs-on: ubuntu-18.04
+  #   steps:
+  #     - yarn test
