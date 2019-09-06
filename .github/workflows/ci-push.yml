@@ -9,13 +9,14 @@ jobs:
     runs-on: ubuntu-18.04
     container:
       image: node:10
-      # env:
-      #   NODE_ENV: development
-      # options:
+      env:
+        NODE_ENV: development
+      options:
+        entrypoint: /bin/sh
     steps:
       - name: "List all files"
         uses: docker://node:8
-        run: pwd && ls -al
+        run: "pwd && ls -al"
         # with:
         #   entrypoint: /bin/sh
       # - name: "Install dependencies"
