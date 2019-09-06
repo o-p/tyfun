@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Check env
-        uses: docker://node:${{ strategy.matrix.node }}
+        uses: docker://node:${{ matrix.node }}
         with:
           entrypoint: /bin/sh
         env:
