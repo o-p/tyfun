@@ -6,6 +6,7 @@ on: [push]
 jobs:
   install:
     name: "Install Requied Packages"
+    runs-on: ubuntu-18.04
     container:
       image: node:10
       env:
