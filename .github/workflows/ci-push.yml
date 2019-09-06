@@ -14,7 +14,7 @@ jobs:
       options: "--entrypoint /bin/sh"
     steps:
       - name: "List all files"
-        uses: docker://node:8
+        # uses: docker://node:8
         run: "pwd && ls -al"
         # with:
         #   entrypoint: /bin/sh
