@@ -14,8 +14,9 @@ jobs:
     steps:
       - name: List all files
         uses: o-p/tyfun@master
-        run: ls -al
+        # run: ls -al
         shell: bash
+      - run: ls -al
         # uses: docker://node:8
         # run: "pwd && ls -al"
         # with:
