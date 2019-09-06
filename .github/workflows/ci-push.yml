@@ -2,15 +2,14 @@ name: "Regular Checkings of Every Pushes"
 
 on: [push]
 
-strategy:
-  matrix:
-    os: ["ubuntu-18.04"]
-    node: ["8", "10", "latest"]
 
 jobs:
   install:
     name: "Install Requied Packages"
-    runs-on: ${{ strategy.matrix.os }}
+    strategy:
+      matrix:
+        node: ["8", "10", "latest"]
+    runs-on: ubuntu-18.04
     steps:
       - name: Check env
         uses: docker://node:${{ strategy.matrix.node }}
