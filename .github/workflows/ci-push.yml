@@ -15,9 +15,9 @@ jobs:
     steps:
       - name: "List all files"
         uses: docker://node:8
+        run: pwd && ls -al
         # with:
         #   entrypoint: /bin/sh
-        run: pwd && ls -al
       # - name: "Install dependencies"
       #   run: yarn
         # uses: docker://node:8
