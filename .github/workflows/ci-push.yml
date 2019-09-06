@@ -1,0 +1,39 @@
+name: "Regular Checkings of Every Pushes"
+
+on: [push]
+
+strategy:
+  matrix:
+    os: ["ubuntu-18.04"]
+    node: ["8", "10", "latest"]
+
+jobs:
+  install:
+    name: "Install Requied Packages"
+    runs-on: ${{ strategy.matrix.os }}
+    steps:
+      - name: Check env
+        uses: docker://node:${{ strategy.matrix.node }}
+        with:
+          entrypoint: /bin/sh
+        env:
+          NODE_ENV: "production"
+        run: yarn
+  lint:
+    name: "Lint Typescripts"
+    needs: [install]
+    runs-on: ubuntu-18.04
+    steps:
+      - yarn lint
+  build:
+    name: "Transpile to JavaScript"
+    needs: [install]
+    runs-on: ubuntu-18.04
+    steps:
+      - yarn build
+  test:
+    name: "Run Unit Tests"
+    needs: [install]
+    runs-on: ubuntu-18.04
+    steps:
+      - yarn test
