@@ -19,7 +19,7 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/aws-lambda": "^8.10.24",
     "@types/node": "^11.13.6",
-    "aws-sdk": "^2.462.0",
+    "aws-sdk": "^2.814.0",
     "babel-loader": "^8.0.5",
     "ts-loader": "^6.0.1",
     "typescript": "^3.4.3",
